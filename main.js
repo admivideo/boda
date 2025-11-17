@@ -1,14 +1,14 @@
 const eventConfig = {
   coupleNames: 'Ana & Luis',
-  weddingDate: '2025-06-14T17:00:00-06:00',
-  venue: 'Hacienda Las Palmas',
-  address: 'Camino Real 123, Ciudad de México',
-  mapsUrl: 'https://maps.app.goo.gl/Pnd7DPJXgu9hZaGn7',
+  weddingDate: '2026-06-20T17:00:00+02:00',
+  venue: 'Parque de los Castillos',
+  address: 'Parque de los Castillos, Alcorcón (Madrid)',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parque+de+los+Castillos+Alcorc%C3%B3n',
   dressCode: 'Formal de verano',
   kidsNote: 'Niños bienvenidos',
   introText:
-    'Queremos compartir contigo este momento tan especial. Acompáñanos a celebrar con una ceremonia íntima seguida de una fiesta llena de música, risas y mucho amor.',
-  hostPhone: '+5215512345678',
+    'Queremos compartir contigo este momento tan especial. Acompáñanos a celebrar en el Parque de los Castillos con una ceremonia íntima seguida de una fiesta llena de música, risas y mucho amor.',
+  hostPhone: '+34900111222',
 };
 
 const qs = new URLSearchParams(window.location.search);
@@ -16,12 +16,12 @@ const guestFromQuery = qs.get('invitado');
 
 function formatDate(date) {
   const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
-  return new Intl.DateTimeFormat('es-MX', options).format(date);
+  return new Intl.DateTimeFormat('es-ES', options).format(date);
 }
 
 function formatTime(date) {
   const options = { hour: 'numeric', minute: '2-digit' };
-  return new Intl.DateTimeFormat('es-MX', options).format(date);
+  return new Intl.DateTimeFormat('es-ES', options).format(date);
 }
 
 function updateStaticText() {
@@ -81,9 +81,39 @@ function handleSubmit(event) {
     return;
   }
 
-  const whatsappUrl = buildWhatsAppUrl(name, count, message);
-  document.getElementById('formHelper').textContent = 'Abriendo WhatsApp...';
-  window.open(whatsappUrl, '_blank');
+  const helper = document.getElementById('formHelper');
+  helper.textContent = 'Guardando confirmación...';
+
+  const payload = {
+    name,
+    count,
+    message,
+    eventDate: eventConfig.weddingDate,
+    venue: eventConfig.venue,
+  };
+
+  const endpoint = document.body.dataset.sheetEndpoint;
+
+  fetch('submit.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...payload, endpoint }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (!data.ok) {
+        throw new Error(data.message || 'No se pudo guardar en Google Sheet');
+      }
+
+      helper.textContent = 'Confirmación guardada en la hoja. Abriendo WhatsApp...';
+      const whatsappUrl = buildWhatsAppUrl(name, count, message);
+      window.open(whatsappUrl, '_blank');
+    })
+    .catch((error) => {
+      console.error(error);
+      helper.textContent =
+        'No pudimos guardar en Google Sheet. Intenta de nuevo o revisa el endpoint en submit.php.';
+    });
 }
 
 updateStaticText();
