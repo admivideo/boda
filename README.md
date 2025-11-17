@@ -10,7 +10,9 @@ regresiva y un botón para confirmar asistencia enviando un mensaje directo a lo
 3. Configura la variable de entorno `GOOGLE_APPS_SCRIPT_URL` con la URL de tu Web App de Google Apps Script que escriba en
    tu Google Sheet (ejemplo de payload en [`submit.php`](./submit.php)).
 4. Comparte el enlace por WhatsApp. Si usas una hoja de cálculo con tu lista de invitados, añade
-   `?invitado=Nombre Apellido` al URL que envías para personalizar el saludo y precargar el formulario.
+   `?invitado=Nombre Apellido` al URL que envías para personalizar el saludo y precargar el formulario. También
+   puedes incluir acompañantes con `&acompanantes=Persona1,Persona2` para mostrar sus nombres y preseleccionar el
+   número de asistentes.
 5. Cada invitado podrá pulsar **Enviar confirmación** para registrar su asistencia en la hoja y abrir WhatsApp con su
    mensaje de asistencia listo.
 
@@ -18,6 +20,17 @@ regresiva y un botón para confirmar asistencia enviando un mensaje directo a lo
 - Colores y tipografías pueden ajustarse en [`styles.css`](./styles.css).
 - Los textos de agenda y notas se encuentran en [`index.php`](./index.php).
 - El mensaje de confirmación se arma en [`main.js`](./main.js) dentro de `buildWhatsAppUrl`.
+
+## Generar enlaces personalizados desde Google Sheets
+Si tu hoja tiene las columnas **Nombre** (A) y **Acompañantes** (B, separados por comas), puedes crear un enlace
+personalizado por fila con una fórmula como:
+
+```text
+=CONCATENAR("https://tu-dominio.com/?invitado=",ENCODEURL(A2),"&acompanantes=",ENCODEURL(B2))
+```
+
+Esto mostrará el saludo con el nombre del invitado, listará a sus acompañantes y preseleccionará el total de
+asistentes en el formulario.
 
 ## Contenido
 - `index.php`: estructura y secciones (hero, detalles, agenda, RSVP) con configuración del endpoint de Google Apps Script.
