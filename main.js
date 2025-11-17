@@ -1,6 +1,7 @@
 const eventConfig = {
   coupleNames: 'Ana & Luis',
-  weddingDate: '2026-06-20T17:00:00+02:00',
+  weddingDate: '2025-06-20T11:00:00+02:00',
+  displayDate: 'Sábado 20 de junio de 2025',
   venue: 'Parque de los Castillos',
   address: 'Parque de los Castillos, Alcorcón (Madrid)',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parque+de+los+Castillos+Alcorc%C3%B3n',
@@ -33,7 +34,7 @@ function formatTime(date) {
 
 function updateStaticText() {
   const eventDate = new Date(eventConfig.weddingDate);
-  const formattedDate = formatDate(eventDate);
+  const formattedDate = eventConfig.displayDate || formatDate(eventDate);
   const formattedTime = formatTime(eventDate);
 
   document.getElementById('coupleNames').textContent = eventConfig.coupleNames;

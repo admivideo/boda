@@ -19,7 +19,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
     <div class="hero-content container">
       <p class="kicker">¡Nos casamos!</p>
       <h1 id="coupleNames">Ana &amp; Luis</h1>
-      <p class="subtitle" id="weddingDate">Sábado 20 de junio, 5:00 p.m.</p>
+      <p class="subtitle" id="weddingDate">Sábado 20 de junio de 2025, 11:00 a.m.</p>
       <p class="greeting" id="guestGreeting"></p>
       <div class="cta-group">
         <a class="button primary" href="#rsvp">Confirmar asistencia</a>
@@ -32,11 +32,11 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
     <section class="container grid stats">
       <div class="stat-card">
         <p class="label">Día</p>
-        <p class="value" id="dateValue">20 de junio 2026</p>
+        <p class="value" id="dateValue">20 de junio 2025</p>
       </div>
       <div class="stat-card">
         <p class="label">Hora</p>
-        <p class="value" id="timeValue">5:00 p.m.</p>
+        <p class="value" id="timeValue">11:00 a.m.</p>
       </div>
       <div class="stat-card">
         <p class="label">Lugar</p>
@@ -65,24 +65,24 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
       <div class="timeline">
         <h3>Agenda</h3>
         <div class="timeline-item">
-          <div class="time">17:00</div>
+          <div class="time">11:00</div>
           <div class="info">
             <p class="title">Ceremonia</p>
-            <p class="desc">Nos diremos “sí, acepto” al atardecer.</p>
+            <p class="desc">Nos diremos “sí, acepto” a media mañana.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="time">18:00</div>
+          <div class="time">12:30</div>
           <div class="info">
             <p class="title">Recepción</p>
-            <p class="desc">Brindis de bienvenida y canapés.</p>
+            <p class="desc">Brindis de bienvenida y aperitivos al aire libre.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="time">19:00</div>
+          <div class="time">14:00</div>
           <div class="info">
-            <p class="title">Cena &amp; baile</p>
-            <p class="desc">Abrimos pista con nuestro primer baile.</p>
+            <p class="title">Almuerzo &amp; baile</p>
+            <p class="desc">Abrimos pista después de nuestro primer baile.</p>
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
   </main>
 
   <footer class="footer">
-    <p>Con cariño, Ana &amp; Luis · <span id="footerDate">20.06.2026</span></p>
+    <p>Con cariño, Ana &amp; Luis · <span id="footerDate">20.06.2025</span></p>
   </footer>
 
   <script src="main.js"></script>
