@@ -1,3 +1,6 @@
+<?php
+$sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/macros/s/REEMPLAZA_CON_TU_WEBAPP_URL/exec';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,16 +9,17 @@
   <title>Invitación de boda</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+ rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-sheet-endpoint="<?php echo htmlspecialchars($sheetEndpoint, ENT_QUOTES, 'UTF-8'); ?>">
   <header class="hero">
     <div class="overlay"></div>
     <div class="hero-content container">
       <p class="kicker">¡Nos casamos!</p>
       <h1 id="coupleNames">Ana &amp; Luis</h1>
-      <p class="subtitle" id="weddingDate">Sábado 14 de junio, 5:00 p.m.</p>
+      <p class="subtitle" id="weddingDate">Sábado 20 de junio, 5:00 p.m.</p>
       <p class="greeting" id="guestGreeting"></p>
       <div class="cta-group">
         <a class="button primary" href="#rsvp">Confirmar asistencia</a>
@@ -28,7 +32,7 @@
     <section class="container grid stats">
       <div class="stat-card">
         <p class="label">Día</p>
-        <p class="value" id="dateValue">14 de junio 2025</p>
+        <p class="value" id="dateValue">20 de junio 2026</p>
       </div>
       <div class="stat-card">
         <p class="label">Hora</p>
@@ -36,7 +40,7 @@
       </div>
       <div class="stat-card">
         <p class="label">Lugar</p>
-        <p class="value" id="venueValue">Hacienda Las Palmas</p>
+        <p class="value" id="venueValue">Parque de los Castillos</p>
       </div>
       <div class="stat-card countdown">
         <p class="label">Faltan</p>
@@ -53,7 +57,7 @@
         </p>
         <ul class="detail-list" id="detailList">
           <li><span>Ubicación:</span> <a id="mapsUrl" target="_blank" rel="noreferrer">Ver en mapa</a></li>
-          <li><span>Dirección:</span> <span id="addressText">Camino Real 123, Ciudad de México</span></li>
+          <li><span>Dirección:</span> <span id="addressText">Parque de los Castillos, Alcorcón (Madrid)</span></li>
           <li><span>Código de vestimenta:</span> <span id="dressCode">Formal de verano</span></li>
           <li><span>Niños:</span> <span id="kidsNote">Niños bienvenidos</span></li>
         </ul>
@@ -124,7 +128,7 @@
   </main>
 
   <footer class="footer">
-    <p>Con cariño, Ana &amp; Luis · <span id="footerDate">14.06.2025</span></p>
+    <p>Con cariño, Ana &amp; Luis · <span id="footerDate">20.06.2026</span></p>
   </footer>
 
   <script src="main.js"></script>
