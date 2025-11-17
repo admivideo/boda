@@ -129,7 +129,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
   </main>
 
   <footer class="footer">
-    <p>Con cariño, Ana &amp; Luis · <span id="footerDate">20.06.2026</span></p>
+    <p>Con cariño, Ana &amp; Luis · <span id="footerDate">20.06.2025</span></p>
   </footer>
 
   <script src="main.js"></script>

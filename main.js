@@ -2,10 +2,9 @@ const eventConfig = {
   coupleNames: 'Ana & Luis',
   weddingDate: '2026-06-20T11:00:00+02:00',
   displayDate: 'Sábado 20 de junio de 2026',
-  venue: 'Parque de los Castillos - Alcorcón (Madrid)',
-  address: 'Parque de los Castillos - Alcorcón (Madrid)',
-  mapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=Parque+de+los+Castillos+-+Alcorc%C3%B3n+(Madrid)',
+  venue: 'Parque de los Castillos',
+  address: 'Parque de los Castillos, Alcorcón (Madrid)',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parque+de+los+Castillos+Alcorc%C3%B3n',
   dressCode: 'Formal de verano',
   kidsNote: 'Niños bienvenidos',
   introText:
