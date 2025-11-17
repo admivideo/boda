@@ -8,7 +8,8 @@ regresiva y un botón para confirmar asistencia enviando un mensaje directo a lo
 2. Ajusta los datos del evento en [`main.js`](./main.js): nombres, fecha/hora, ubicación, enlace de mapas y número de
    WhatsApp anfitrión.
 3. Configura la variable de entorno `GOOGLE_APPS_SCRIPT_URL` con la URL de tu Web App de Google Apps Script que escriba en
-   tu Google Sheet (ejemplo de payload en [`submit.php`](./submit.php)).
+   tu Google Sheet (ejemplo de payload en [`submit.php`](./submit.php)). La hoja sugerida para este proyecto es
+   [esta en Google Sheets](https://docs.google.com/spreadsheets/d/10uxxQ3DyQ-5ppu2j83bmaSsqlWy3sXTsglQiOasQOZI/edit?gid=0#gid=0).
 4. Comparte el enlace por WhatsApp. Si usas una hoja de cálculo con tu lista de invitados, añade
    `?invitado=Nombre Apellido` al URL que envías para personalizar el saludo y precargar el formulario. También
    puedes incluir acompañantes con `&acompanantes=Persona1,Persona2` para mostrar sus nombres y preseleccionar el

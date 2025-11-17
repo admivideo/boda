@@ -32,7 +32,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
     <section class="container grid stats">
       <div class="stat-card">
         <p class="label">Día</p>
-        <p class="value" id="dateValue">20 de junio 2025</p>
+        <p class="value" id="dateValue">20 de junio de 2026</p>
       </div>
       <div class="stat-card">
         <p class="label">Hora</p>
@@ -40,7 +40,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
       </div>
       <div class="stat-card">
         <p class="label">Lugar</p>
-        <p class="value" id="venueValue">Parque de los Castillos</p>
+        <p class="value" id="venueValue">Parque de los Castillos - Alcorcón (Madrid)</p>
       </div>
       <div class="stat-card countdown">
         <p class="label">Faltan</p>
@@ -57,7 +57,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
         </p>
         <ul class="detail-list" id="detailList">
           <li><span>Ubicación:</span> <a id="mapsUrl" target="_blank" rel="noreferrer">Ver en mapa</a></li>
-          <li><span>Dirección:</span> <span id="addressText">Parque de los Castillos, Alcorcón (Madrid)</span></li>
+          <li><span>Dirección:</span> <span id="addressText">Parque de los Castillos - Alcorcón (Madrid)</span></li>
           <li><span>Código de vestimenta:</span> <span id="dressCode">Formal de verano</span></li>
           <li><span>Niños:</span> <span id="kidsNote">Niños bienvenidos</span></li>
         </ul>
