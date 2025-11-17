@@ -95,9 +95,10 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
           <h2>¿Vienes a celebrar?</h2>
           <p class="muted">Cuéntanos quién asistirá y cuántas personas te acompañan. Usaremos este mensaje para
             tener tu confirmación en nuestra lista.</p>
+          <p class="muted" id="personalizedInfo" hidden></p>
           <ul class="notes">
-            <li>Si compartes el enlace desde tu Google Sheet puedes agregar <code>?invitado=Nombre</code> para
-              personalizar el saludo y el formulario.</li>
+            <li>Si compartes el enlace desde tu Google Sheet puedes agregar <code>?invitado=Nombre</code> y
+              <code>&amp;acompanantes=Persona1,Persona2</code> para personalizar saludo, acompañantes y asistentes.</li>
             <li>También puedes editar el número de anfitrión y la fecha del evento en <code>main.js</code>.</li>
           </ul>
         </div>
