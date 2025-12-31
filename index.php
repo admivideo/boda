@@ -1,5 +1,5 @@
 <?php
-$sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/macros/s/REEMPLAZA_CON_TU_WEBAPP_URL/exec';
+$sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/macros/s/AKfycbwxYPvg3hZoJ5XNzEqdK36zEZd9NI1pacI-9Ck0a3rjx75LFp3vbWiHcXfqC-2UIkKw7w/exec';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -19,7 +19,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
     <div class="hero-content container">
       <p class="kicker">¡Nos casamos!</p>
       <h1 id="coupleNames">María &amp; Jose</h1>
-      <p class="subtitle" id="weddingDate">Sábado 20 de junio, 11:00 p.m.</p>
+      <p class="subtitle" id="weddingDate">El sábado 20 de junio a las 11 de la mañana</p>
       <p class="greeting" id="guestGreeting"></p>
       <div class="cta-group">
         <a class="button primary" href="#rsvp">Confirmar asistencia</a>
@@ -40,7 +40,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
       </div>
       <div class="stat-card">
         <p class="label">Lugar</p>
-        <p class="value" id="venueValue">Parque de los Castillos - Alcorcón (Madrid)</p>
+        <p class="value" id="venueValue">En el Parque de los Castillos - Alcorcón (Madrid)</p>
       </div>
       <div class="stat-card countdown">
         <p class="label">Faltan</p>
@@ -52,7 +52,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
       <div class="detail-card">
         <h2>Nuestro gran día</h2>
         <p id="introText">
-          Queremos compartir con vosotros este momento tan especial. Acompañadnos a celebrar con una ceremonia íntima
+          Queremos compartir con vosotros este momento tan especial. Acompañadnos a celebrar con una ceremonia
           seguida de una fiesta llena de música, risas y mucho amor.
         </p>
         <ul class="detail-list" id="detailList">
@@ -72,16 +72,16 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
           </div>
         </div>
         <div class="timeline-item">
-          <div class="time">12:30</div>
+          <div class="time">a las 13:00</div>
           <div class="info">
             <p class="title">Cóctel</p>
-            <p class="desc">Brindis de bienvenida y aperitivos al aire libre.</p>
+            <p class="desc">Brindis de bienvenida y cóctel al aire libre.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="time">13:00</div>
+          <div class="time">14:00</div>
           <div class="info">
-            <p class="title">Comida y luego baile y copas</p>
+            <p class="title">Comida, baile y copas o copas y baile, depende de cada uno</p>
             <p class="desc">Abrimos pista después de nuestro primer baile.</p>
           </div>
         </div>
@@ -92,23 +92,18 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
       <div class="container rsvp-card">
         <div>
           <p class="kicker">Confirma por WhatsApp</p>
-          <h2>¿Vienes a celebrar?</h2>
-          <p class="muted">Cuéntanos quién asistirá y cuántas personas te acompañan. Usaremos este mensaje para
+          <h2>¿Venis a celebrarlo con nosotros?</h2>
+          <p class="muted">Cuéntanos cuántas personas sois en total. Usaremos este mensaje para
             tener tu confirmación en nuestra lista.</p>
           <p class="muted" id="personalizedInfo" hidden></p>
-          <ul class="notes">
-            <li>Si compartes el enlace desde tu Google Sheet puedes agregar <code>?invitado=Nombre</code> y
-              <code>&amp;acompanantes=Persona1,Persona2</code> para personalizar saludo, acompañantes y asistentes.</li>
-            <li>También puedes editar el número de anfitrión y la fecha del evento en <code>main.js</code>.</li>
-          </ul>
         </div>
         <form id="rsvpForm" class="form">
           <div class="field">
-            <label for="guestName">Nombre</label>
+            <label for="guestName">Nombre y apellidos</label>
             <input id="guestName" name="guestName" type="text" placeholder="Ej. Mariana López" required>
           </div>
           <div class="field">
-            <label for="guestCount">Número de asistentes</label>
+            <label for="guestCount">Número total de asistentes</label>
             <select id="guestCount" name="guestCount" required>
               <option value="" disabled selected>Selecciona</option>
               <option value="1">1</option>
@@ -116,10 +111,14 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
               <option value="3">3</option>
               <option value="4">4</option>
 			  <option value="5">5</option>
+			  <option value="6">6</option>
+			  <option value="7">7</option>
+			  <option value="8">8</option>
+			  <option value="9">9</option>
             </select>
           </div>
           <div class="field">
-            <label for="message">Mensaje (opcional)</label>
+            <label for="message">Mensaje (opcional) si venis con niños dinos cuantos serán.</label>
             <textarea id="message" name="message" rows="3" placeholder="Alguna nota especial o restricción alimentaria"></textarea>
           </div>
           <button class="button primary full" type="submit">Enviar confirmación</button>

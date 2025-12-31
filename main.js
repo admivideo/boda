@@ -1,13 +1,13 @@
 const eventConfig = {
   coupleNames: 'María & Jose',
-  weddingDate: '2026-06-20T17:00:00+02:00',
+  weddingDate: '2026-06-20T11:00:00+02:00',
   venue: 'Parque de los Castillos',
   address: 'Parque de los Castillos, Alcorcón (Madrid)',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parque+de+los+Castillos+Alcorc%C3%B3n',
   dressCode: 'al gusto de cada uno',
   kidsNote: 'Cuantos más mejor',
   introText:
-    'Queremos compartir contigo este momento tan especial. Acompáñanos a celebrar en el Parque de los Castillos con una ceremonia íntima seguida de una fiesta llena de música, risas y mucho amor.',
+    'Queremos compartir con vosotros este momento tan especial. Acompañadnos a celebrar la ceremonia en el Parque de los Castillos seguida de una fiesta llena de música, risas y mucho amor.',
   hostPhone: '+34616339117',
 };
 
@@ -60,7 +60,7 @@ function updateStaticText() {
       ? ` junto a ${companionNames.join(', ')}`
       : '';
 
-    greetingEl.textContent = `Hola ${guestFromQuery}${companionsText}, no podemos esperar para verte.`;
+    greetingEl.textContent = `Hola ${guestFromQuery}${companionsText}, no podemos esperar para veros.`;
     nameInput.value = guestFromQuery;
   } else {
     greetingEl.textContent = 'Nos hará mucha ilusión contar con vosotros.';
@@ -112,7 +112,7 @@ function handleSubmit(event) {
   const message = document.getElementById('message').value.trim();
 
   if (!name || !count) {
-    document.getElementById('formHelper').textContent = 'Agrega tu nombre y el número de asistentes.';
+    document.getElementById('formHelper').textContent = 'Agrega tu nombre y el número total de asistentes que vendreis.';
     return;
   }
 

@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
-$defaultEndpoint = 'https://script.google.com/macros/s/REEMPLAZA_CON_TU_WEBAPP_URL/exec';
+$defaultEndpoint = 'https://script.google.com/macros/s/AKfycbwxYPvg3hZoJ5XNzEqdK36zEZd9NI1pacI-9Ck0a3rjx75LFp3vbWiHcXfqC-2UIkKw7w/exec';
 $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: $defaultEndpoint;
 
 $input = json_decode(file_get_contents('php://input'), true) ?? [];
