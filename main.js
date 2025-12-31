@@ -1,5 +1,5 @@
 const eventConfig = {
-  coupleNames: 'Ana & Luis',
+  coupleNames: 'María & Jose',
   weddingDate: '2026-06-20T17:00:00+02:00',
   venue: 'Parque de los Castillos',
   address: 'Parque de los Castillos, Alcorcón (Madrid)',
