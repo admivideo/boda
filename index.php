@@ -52,14 +52,14 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
       <div class="detail-card">
         <h2>Nuestro gran día</h2>
         <p id="introText">
-          Queremos compartir contigo este momento tan especial. Acompáñanos a celebrar con una ceremonia íntima
+          Queremos compartir con vosotros este momento tan especial. Acompañadnos a celebrar con una ceremonia íntima
           seguida de una fiesta llena de música, risas y mucho amor.
         </p>
         <ul class="detail-list" id="detailList">
           <li><span>Ubicación:</span> <a id="mapsUrl" target="_blank" rel="noreferrer">Ver en mapa</a></li>
           <li><span>Dirección:</span> <span id="addressText">Parque de los Castillos - Alcorcón (Madrid)</span></li>
-          <li><span>Código de vestimenta:</span> <span id="dressCode">Formal de verano</span></li>
-          <li><span>Niños:</span> <span id="kidsNote">Niños bienvenidos</span></li>
+          <li><span>Código de vestimenta:</span> <span id="dressCode">al gusto de cada uno</span></li>
+          <li><span>Niños:</span> <span id="kidsNote">Cuantos más mejor</span></li>
         </ul>
       </div>
       <div class="timeline">
@@ -68,20 +68,20 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
           <div class="time">11:00</div>
           <div class="info">
             <p class="title">Ceremonia</p>
-            <p class="desc">Nos diremos “sí, acepto” a media mañana.</p>
+            <p class="desc">Nos diremos “sí, quiero” a las 11:00.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="time">12:30</div>
           <div class="info">
-            <p class="title">Recepción</p>
+            <p class="title">Cóctel</p>
             <p class="desc">Brindis de bienvenida y aperitivos al aire libre.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="time">14:00</div>
+          <div class="time">13:00</div>
           <div class="info">
-            <p class="title">Almuerzo &amp; baile</p>
+            <p class="title">Comida y luego baile y copas</p>
             <p class="desc">Abrimos pista después de nuestro primer baile.</p>
           </div>
         </div>
@@ -115,6 +115,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
+			  <option value="5">5</option>
             </select>
           </div>
           <div class="field">
