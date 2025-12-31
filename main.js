@@ -4,11 +4,11 @@ const eventConfig = {
   venue: 'Parque de los Castillos',
   address: 'Parque de los Castillos, Alcorcón (Madrid)',
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Parque+de+los+Castillos+Alcorc%C3%B3n',
-  dressCode: 'Formal de verano',
-  kidsNote: 'Niños bienvenidos',
+  dressCode: 'al gusto de cada uno',
+  kidsNote: 'Cuantos más mejor',
   introText:
     'Queremos compartir contigo este momento tan especial. Acompáñanos a celebrar en el Parque de los Castillos con una ceremonia íntima seguida de una fiesta llena de música, risas y mucho amor.',
-  hostPhone: '+34900111222',
+  hostPhone: '+34616339117',
 };
 
 const qs = new URLSearchParams(window.location.search);
@@ -63,7 +63,7 @@ function updateStaticText() {
     greetingEl.textContent = `Hola ${guestFromQuery}${companionsText}, no podemos esperar para verte.`;
     nameInput.value = guestFromQuery;
   } else {
-    greetingEl.textContent = 'Nos hará mucha ilusión contar contigo.';
+    greetingEl.textContent = 'Nos hará mucha ilusión contar con vosotros.';
   }
 
   if (totalFromLink > 0 && personalizedInfo) {
