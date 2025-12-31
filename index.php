@@ -19,7 +19,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
     <div class="hero-content container">
       <p class="kicker">¡Nos casamos!</p>
       <h1 id="coupleNames">María &amp; Jose</h1>
-      <p class="subtitle" id="weddingDate">Sábado 20 de junio, 5:00 p.m.</p>
+      <p class="subtitle" id="weddingDate">Sábado 20 de junio, 11:00 p.m.</p>
       <p class="greeting" id="guestGreeting"></p>
       <div class="cta-group">
         <a class="button primary" href="#rsvp">Confirmar asistencia</a>
@@ -32,15 +32,15 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
     <section class="container grid stats">
       <div class="stat-card">
         <p class="label">Día</p>
-        <p class="value" id="dateValue">20 de junio 2026</p>
+        <p class="value" id="dateValue">20 de junio de 2026</p>
       </div>
       <div class="stat-card">
         <p class="label">Hora</p>
-        <p class="value" id="timeValue">5:00 p.m.</p>
+        <p class="value" id="timeValue">11:00 a.m.</p>
       </div>
       <div class="stat-card">
         <p class="label">Lugar</p>
-        <p class="value" id="venueValue">Parque de los Castillos</p>
+        <p class="value" id="venueValue">Parque de los Castillos - Alcorcón (Madrid)</p>
       </div>
       <div class="stat-card countdown">
         <p class="label">Faltan</p>
@@ -57,7 +57,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
         </p>
         <ul class="detail-list" id="detailList">
           <li><span>Ubicación:</span> <a id="mapsUrl" target="_blank" rel="noreferrer">Ver en mapa</a></li>
-          <li><span>Dirección:</span> <span id="addressText">Parque de los Castillos, Alcorcón (Madrid)</span></li>
+          <li><span>Dirección:</span> <span id="addressText">Parque de los Castillos - Alcorcón (Madrid)</span></li>
           <li><span>Código de vestimenta:</span> <span id="dressCode">Formal de verano</span></li>
           <li><span>Niños:</span> <span id="kidsNote">Niños bienvenidos</span></li>
         </ul>
@@ -65,24 +65,24 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
       <div class="timeline">
         <h3>Agenda</h3>
         <div class="timeline-item">
-          <div class="time">17:00</div>
+          <div class="time">11:00</div>
           <div class="info">
             <p class="title">Ceremonia</p>
-            <p class="desc">Nos diremos “sí, acepto” al atardecer.</p>
+            <p class="desc">Nos diremos “sí, acepto” a media mañana.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="time">18:00</div>
+          <div class="time">12:30</div>
           <div class="info">
             <p class="title">Recepción</p>
-            <p class="desc">Brindis de bienvenida y canapés.</p>
+            <p class="desc">Brindis de bienvenida y aperitivos al aire libre.</p>
           </div>
         </div>
         <div class="timeline-item">
-          <div class="time">19:00</div>
+          <div class="time">14:00</div>
           <div class="info">
-            <p class="title">Cena &amp; baile</p>
-            <p class="desc">Abrimos pista con nuestro primer baile.</p>
+            <p class="title">Almuerzo &amp; baile</p>
+            <p class="desc">Abrimos pista después de nuestro primer baile.</p>
           </div>
         </div>
       </div>
@@ -95,9 +95,10 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
           <h2>¿Vienes a celebrar?</h2>
           <p class="muted">Cuéntanos quién asistirá y cuántas personas te acompañan. Usaremos este mensaje para
             tener tu confirmación en nuestra lista.</p>
+          <p class="muted" id="personalizedInfo" hidden></p>
           <ul class="notes">
-            <li>Si compartes el enlace desde tu Google Sheet puedes agregar <code>?invitado=Nombre</code> para
-              personalizar el saludo y el formulario.</li>
+            <li>Si compartes el enlace desde tu Google Sheet puedes agregar <code>?invitado=Nombre</code> y
+              <code>&amp;acompanantes=Persona1,Persona2</code> para personalizar saludo, acompañantes y asistentes.</li>
             <li>También puedes editar el número de anfitrión y la fecha del evento en <code>main.js</code>.</li>
           </ul>
         </div>

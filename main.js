@@ -13,6 +13,13 @@ const eventConfig = {
 
 const qs = new URLSearchParams(window.location.search);
 const guestFromQuery = qs.get('invitado');
+const companionsFromQuery = qs.get('acompanantes') || qs.get('acompañantes');
+const companionNames = companionsFromQuery
+  ? companionsFromQuery
+      .split(',')
+      .map((name) => name.trim())
+      .filter(Boolean)
+  : [];
 
 function formatDate(date) {
   const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
@@ -26,7 +33,7 @@ function formatTime(date) {
 
 function updateStaticText() {
   const eventDate = new Date(eventConfig.weddingDate);
-  const formattedDate = formatDate(eventDate);
+  const formattedDate = eventConfig.displayDate || formatDate(eventDate);
   const formattedTime = formatTime(eventDate);
 
   document.getElementById('coupleNames').textContent = eventConfig.coupleNames;
@@ -43,12 +50,34 @@ function updateStaticText() {
   document.getElementById('footerDate').textContent = eventDate.toISOString().slice(0, 10).split('-').reverse().join('.');
 
   const greetingEl = document.getElementById('guestGreeting');
+  const personalizedInfo = document.getElementById('personalizedInfo');
+  const nameInput = document.getElementById('guestName');
+  const countInput = document.getElementById('guestCount');
+  const totalFromLink = companionNames.length + (guestFromQuery ? 1 : 0);
+
   if (guestFromQuery) {
-    greetingEl.textContent = `Hola ${guestFromQuery}, no podemos esperar para verte.`;
-    const nameInput = document.getElementById('guestName');
+    const companionsText = companionNames.length
+      ? ` junto a ${companionNames.join(', ')}`
+      : '';
+
+    greetingEl.textContent = `Hola ${guestFromQuery}${companionsText}, no podemos esperar para verte.`;
     nameInput.value = guestFromQuery;
   } else {
     greetingEl.textContent = 'Nos hará mucha ilusión contar contigo.';
+  }
+
+  if (totalFromLink > 0 && personalizedInfo) {
+    const namesSummary = [guestFromQuery, ...companionNames].filter(Boolean).join(' + ');
+    personalizedInfo.textContent = `Hemos reservado para ${totalFromLink}${namesSummary ? ` (${namesSummary})` : ''}. Ajusta el número si cambia.`;
+    personalizedInfo.hidden = false;
+
+    const matchingOption = Array.from(countInput.options).find(
+      (option) => option.value === String(totalFromLink)
+    );
+
+    if (matchingOption) {
+      countInput.value = String(totalFromLink);
+    }
   }
 }
 
@@ -65,7 +94,13 @@ function buildWhatsAppUrl(name, count, message) {
   const base = 'https://wa.me/';
   const phone = eventConfig.hostPhone.replace(/\D/g, '');
   const greeting = guestFromQuery ? guestFromQuery : 'Hola';
-  const text = `${greeting}, soy ${name}. Confirmo mi asistencia a la boda. Seremos ${count} persona(s). ${message ? `Nota: ${message}` : ''}`.trim();
+  const headcountText = count ? `Seremos ${count} persona(s).` : '';
+  const companionsText = companionNames.length
+    ? ` Acompañantes: ${companionNames.join(', ')}.`
+    : '';
+  const text = `${greeting}, soy ${name}. Confirmo mi asistencia a la boda. ${headcountText}${companionsText} ${
+    message ? `Nota: ${message}` : ''
+  }`.trim();
   const url = `${base}${phone}?text=${encodeURIComponent(text)}`;
   return url;
 }
