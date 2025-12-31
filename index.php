@@ -18,8 +18,8 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
     <div class="overlay"></div>
     <div class="hero-content container">
       <p class="kicker">¡Nos casamos!</p>
-      <h1 id="coupleNames">Ana &amp; Luis</h1>
-      <p class="subtitle" id="weddingDate">Sábado 20 de junio de 2026, 11:00 a.m.</p>
+      <h1 id="coupleNames">María &amp; Jose</h1>
+      <p class="subtitle" id="weddingDate">Sábado 20 de junio, 11:00 p.m.</p>
       <p class="greeting" id="guestGreeting"></p>
       <div class="cta-group">
         <a class="button primary" href="#rsvp">Confirmar asistencia</a>
@@ -129,7 +129,7 @@ $sheetEndpoint = getenv('GOOGLE_APPS_SCRIPT_URL') ?: 'https://script.google.com/
   </main>
 
   <footer class="footer">
-    <p>Con cariño, Ana &amp; Luis · <span id="footerDate">20.06.2025</span></p>
+    <p>Con cariño, María &amp; Jose · <span id="footerDate">20.06.2026</span></p>
   </footer>
 
   <script src="main.js"></script>
