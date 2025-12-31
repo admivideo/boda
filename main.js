@@ -142,7 +142,7 @@ function handleSubmit(event) {
 
       helper.textContent = 'Confirmación guardada en la hoja. Abriendo WhatsApp...';
       const whatsappUrl = buildWhatsAppUrl(name, count, message);
-      window.open(whatsappUrl, '_blank');
+      window.location.href = whatsappUrl;
     })
     .catch((error) => {
       console.error(error);
